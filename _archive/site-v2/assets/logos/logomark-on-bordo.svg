@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120">
+  <rect width="320" height="120" fill="#650810"></rect>
+  <g fill="#F1EBEB">
+    <path d="M40 36 L60 56 L40 76 L20 56 Z" fill="none" stroke="#F1EBEB" stroke-width="1.5"></path>
+    <path d="M40 46 L50 56 L40 66 L30 56 Z" fill="none" stroke="#F1EBEB" stroke-width="1"></path>
+    <path d="M40 46 L40 66" stroke="#F1EBEB" stroke-width="0.8" opacity="0.6"></path>
+    <text x="80" y="58" font-family="Cormorant Garamond, Ivy Mode, serif" font-style="italic" font-size="34" fill="#F1EBEB">Dra. Geórgia Peres</text>
+    <text x="80" y="82" font-family="Inter, sans-serif" letter-spacing="0.32em" font-size="9" fill="#F1EBEB" opacity="0.78">CIRURGIA PLÁSTICA</text>
+  </g>
+</svg>

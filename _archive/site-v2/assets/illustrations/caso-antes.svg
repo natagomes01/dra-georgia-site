@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3A0509"/>
+      <stop offset="100%" stop-color="#1A0204"/>
+    </linearGradient>
+    <linearGradient id="silA" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#D6C0B2" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#650810" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="winA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="400" fill="url(#bgA)"/>
+  <g opacity="0.78">
+    <path d="M 50 400 Q 60 280 110 240 Q 140 220 160 220 L 160 400 Z" fill="url(#silA)"/>
+    <path d="M 160 220 Q 170 180 195 165 Q 220 160 230 180 Q 235 210 220 230 L 160 235 Z" fill="url(#silA)"/>
+    <path d="M 230 230 Q 270 270 280 320 Q 285 360 285 400 L 160 400 L 160 235 Z" fill="url(#silA)" opacity="0.6"/>
+  </g>
+  <rect width="320" height="400" fill="url(#winA)"/>
+</svg>

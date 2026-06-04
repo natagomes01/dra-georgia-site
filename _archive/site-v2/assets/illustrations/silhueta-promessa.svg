@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A0A14"/>
+      <stop offset="100%" stop-color="#3A0509"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+      <stop offset="45%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <linearGradient id="silhouette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D6C0B2" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#D6C0B2" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2C0306" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.35" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="rgba(201,162,74,0.35)"/>
+      <stop offset="100%" stop-color="rgba(201,162,74,0)"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect width="600" height="800" fill="url(#glow)"/>
+
+  <!-- Silhueta editorial: ombro, pescoço, perfil sugerido. Crop ético: foco em ombro/colo de costas. -->
+  <g opacity="0.92">
+    <!-- Ombro/braço esquerdo -->
+    <path d="M 90 800 Q 110 620 180 540 Q 240 480 290 470 L 290 800 Z"
+          fill="url(#silhouette)"/>
+    <!-- Pescoço/cabeça (de costas, sugestão) -->
+    <path d="M 290 470 Q 295 400 320 350 Q 360 290 400 280 Q 430 290 440 320 Q 445 360 430 400 Q 415 430 400 450 Q 380 470 360 475 L 290 480 Z"
+          fill="url(#silhouette)"/>
+    <!-- Linha de costas/colo descendo -->
+    <path d="M 400 450 Q 480 520 510 620 Q 525 700 530 800 L 290 800 L 290 480 Z"
+          fill="url(#silhouette)" opacity="0.7"/>
+    <!-- Detalhe de cabelo (linha sutil) -->
+    <path d="M 400 280 Q 440 300 450 350 Q 455 400 440 440"
+          fill="none" stroke="rgba(214,192,178,0.25)" stroke-width="1.2"/>
+    <!-- Linha sutil de luz no ombro -->
+    <path d="M 200 540 Q 260 500 305 478"
+          fill="none" stroke="rgba(241,235,235,0.25)" stroke-width="1"/>
+  </g>
+
+  <!-- Sombra de janela (light-window) sobreposta -->
+  <rect width="600" height="800" fill="url(#window)"/>
+
+  <!-- Filete dourado discreto no canto inferior -->
+  <line x1="40" y1="760" x2="120" y2="760" stroke="#C9A24A" stroke-width="1" opacity="0.6"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A0A14"/>
+      <stop offset="100%" stop-color="#3A0509"/>
+    </linearGradient>
+    <linearGradient id="silD" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#F2D27A" stop-opacity="0.42"/>
+      <stop offset="60%" stop-color="#D6C0B2" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3A0509" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="winD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+      <stop offset="45%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <radialGradient id="glowD" cx="0.4" cy="0.35" r="0.5">
+      <stop offset="0%" stop-color="rgba(201,162,74,0.32)"/>
+      <stop offset="100%" stop-color="rgba(201,162,74,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="400" fill="url(#bgD)"/>
+  <rect width="320" height="400" fill="url(#glowD)"/>
+  <g opacity="0.95">
+    <path d="M 50 400 Q 55 270 105 225 Q 135 205 160 205 L 160 400 Z" fill="url(#silD)"/>
+    <path d="M 160 205 Q 170 165 195 150 Q 220 145 230 165 Q 235 195 220 215 L 160 220 Z" fill="url(#silD)"/>
+    <path d="M 230 215 Q 275 255 285 305 Q 290 350 290 400 L 160 400 L 160 220 Z" fill="url(#silD)" opacity="0.75"/>
+    <path d="M 110 230 Q 145 215 158 210" fill="none" stroke="rgba(241,235,235,0.3)" stroke-width="1"/>
+  </g>
+  <rect width="320" height="400" fill="url(#winD)"/>
+</svg>

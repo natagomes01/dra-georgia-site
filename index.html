@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#650810">
+<meta name="description" content="Dra. Geórgia Peres · Cirurgia plástica · Mamas naturais. CRM-SP 180223 · RQE 64136.">
+<meta property="og:title" content="Dra. Geórgia Peres — Cirurgia plástica">
+<meta property="og:description" content="Mamas naturais. Mais que procedimentos: clareza, escolha e confiança.">
+<meta property="og:type" content="website">
+<title>Dra. Geórgia Peres · Cirurgia plástica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap">
+<style>
+  :root {
+    --bordo: #650810;
+    --vinho: #2C0306;
+    --nude:  #D6C0B2;
+    --offwhite: #F1EBEB;
+    --ivory: #FAF6F4;
+    --gold: #C9A24A;
+    --gold-light: #F2D27A;
+    --grafite: #2F2F2F;
+    --fg-on-bordo-2: rgba(241, 235, 235, 0.78);
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bordo);
+    background-image:
+      linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 45%),
+      linear-gradient(180deg, #7A0A14 0%, #3A0509 100%);
+    color: var(--offwhite);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px;
+    width: 100%;
+  }
+  header {
+    padding-block: 24px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--offwhite);
+    text-decoration: none;
+  }
+  .brand .diamond {
+    width: 12px; height: 12px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    display: inline-block;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-block: clamp(40px, 8vw, 96px);
+  }
+  .hero {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 720px;
+  }
+  .divider-gold {
+    width: 64px;
+    height: 1px;
+    background: var(--gold-light);
+    border: 0;
+    margin: 0 auto 24px;
+  }
+  .overline {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-on-bordo-2);
+    margin-bottom: 16px;
+  }
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--offwhite);
+    margin-bottom: 12px;
+    text-wrap: balance;
+  }
+  .display em {
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+  .sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 30px);
+    color: var(--fg-on-bordo-2);
+    margin-bottom: 48px;
+    line-height: 1.4;
+  }
+  .ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--offwhite);
+    color: var(--bordo);
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 22px 36px;
+    min-height: 56px;
+    border-radius: 8px;
+    transition: background 160ms cubic-bezier(0.22,0.61,0.36,1), transform 160ms cubic-bezier(0.22,0.61,0.36,1), box-shadow 240ms cubic-bezier(0.22,0.61,0.36,1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+  .btn:hover { background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+  .btn .arrow { display: inline-block; transition: transform 160ms cubic-bezier(0.22,0.61,0.36,1); }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .whats {
+    color: var(--gold-light);
+    font-style: italic;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(241, 235, 235, 0.2);
+    padding-bottom: 2px;
+    transition: color 160ms, border-color 160ms;
+  }
+  .whats:hover { color: #fff; border-bottom-color: var(--gold-light); }
+  footer {
+    padding-block: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--fg-on-bordo-2);
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+  footer .crm { font-style: italic; }
+  .specialty-note {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(241, 235, 235, 0.14);
+    font-size: 13px;
+    color: var(--fg-on-bordo-2);
+    line-height: 1.6;
+  }
+  .specialty-note strong { color: var(--gold-light); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="brand" href="/">
+      <span class="diamond" aria-hidden="true"></span>
+      <span>Dra. Geórgia Peres</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <hr class="divider-gold" aria-hidden="true">
+      <p class="overline">Cirurgia plástica · São Paulo</p>
+      <h1 class="display">Mamas <em>naturais.</em></h1>
+      <p class="sub">Mais que procedimentos: clareza, escolha e confiança.</p>
+
+      <div class="ctas">
+        <a class="btn" href="mamas/">
+          Conheça meu trabalho com mama <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="whats" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20vim%20do%20site." target="_blank" rel="noopener">
+          Falar no WhatsApp · (11) 98803-2382
+        </a>
+      </div>
+
+      <p class="specialty-note">
+        <strong>Site em construção.</strong> A página completa com todas as especialidades está sendo finalizada.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="crm">Dra. Geórgia Peres · CRM-SP 180223 · RQE 64136</p>
+    <p>Rua Escobar Ortiz, 335 — São Paulo · SP</p>
+  </div>
+</footer>
+
+</body>
+</html>
