@@ -53,54 +53,73 @@
     line-height: 1.7;
   }
 
-  /* Anchor nav (chips) */
+  /* Anchor nav (chips) — sticky abaixo do header */
   .proc-nav {
     background: var(--bg-card);
     position: sticky;
-    top: 100px;
+    top: 117px; /* logo 88px + padding 2*14px = 116, +1 fudge */
     z-index: 20;
     border-bottom: 1px solid var(--rule-soft);
-    padding-block: 14px;
-    margin-bottom: 0;
+    padding-block: 20px;
   }
-  @media (max-width: 960px) { .proc-nav { top: 72px; } }
   .proc-nav__inner {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: nowrap;
+    justify-content: center;
     overflow-x: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
   }
-  .proc-nav__inner::-webkit-scrollbar { height: 4px; }
-  .proc-nav__inner::-webkit-scrollbar-thumb { background: var(--rule-bordo); border-radius: 2px; }
+  .proc-nav__inner::-webkit-scrollbar { display: none; }
+  @media (max-width: 720px) {
+    /* No mobile, layout vira carrossel scrollável centrado no ativo */
+    .proc-nav__inner {
+      justify-content: flex-start;
+      padding-inline: 12px;
+      scroll-padding-inline: 50%;
+    }
+  }
   .proc-nav a {
     flex-shrink: 0;
-    scroll-snap-align: start;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border: 1px solid var(--rule-soft);
     border-radius: var(--r-pill);
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 500;
     color: var(--fg-2);
+    background: transparent;
     transition: background var(--dur-fast) var(--ease),
                 color var(--dur-fast) var(--ease),
                 border-color var(--dur-fast) var(--ease);
     text-decoration: none;
+    white-space: nowrap;
   }
   .proc-nav a:hover {
     color: var(--accent);
     border-color: var(--rule-bordo);
     background: var(--bg-paper);
   }
+  /* Chip "completado" (já passou enquanto rola) — sutil indício de progresso */
+  .proc-nav a.is-visited {
+    color: var(--accent);
+    border-color: var(--rule-bordo);
+    background: rgba(101, 8, 16, 0.04);
+  }
+  /* Chip ativo — destaque cheio bordô */
+  .proc-nav a.is-active {
+    color: var(--fg-on-bordo);
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px rgba(101, 8, 16, 0.20);
+  }
 
   /* Procedure section */
   .proc {
     padding-block: clamp(64px, 8vw, 112px);
-    scroll-margin-top: 160px;
+    scroll-margin-top: 180px; /* header 117 + proc-nav ~52 + 11 gap */
   }
   .proc--paper { background: var(--bg-paper); }
   .proc--ivory { background: var(--bg-card); }
@@ -210,7 +229,7 @@
       <a href="../corpo/">Corpo</a>
       <a href="../estetica/">Estética</a>
       <a href="../sobre/">Sobre</a>
-      <a href="../contato/">Contato</a>
+      <a href="../#contato">Contato</a>
     </nav>
     <div class="site-header__cta">
       <a class="btn btn--primary" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
@@ -230,7 +249,7 @@
       <a href="../corpo/">Corpo</a>
       <a href="../estetica/">Estética</a>
       <a href="../sobre/">Sobre</a>
-      <a href="../contato/">Contato</a>
+      <a href="../#contato">Contato</a>
     </nav>
     <a class="btn btn--primary" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
       Agendar avaliação <span class="btn-arrow" aria-hidden="true">→</span>
@@ -507,7 +526,7 @@
         <a href="../mama/">Mama</a> · <a href="./">Face</a><br>
         <a href="../corpo/">Corpo</a> · <a href="../estetica/">Estética</a>
       </p>
-      <p style="margin-top:12px;"><a href="../sobre/">Sobre a Dra.</a> · <a href="../contato/">Contato</a></p>
+      <p style="margin-top:12px;"><a href="../sobre/">Sobre a Dra.</a> · <a href="../#contato">Contato</a></p>
     </div>
   </div>
   <div class="container site-footer__legal">
@@ -539,6 +558,55 @@
     }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
+
+  // Scroll-spy: marca chip ativo + visitados conforme rola pelos procedimentos
+  (function () {
+    const sections = Array.from(document.querySelectorAll('.proc'));
+    if (!sections.length) return;
+    const idToLink = new Map();
+    document.querySelectorAll('.proc-nav a').forEach(a => {
+      const id = a.getAttribute('href').replace('#', '');
+      idToLink.set(id, a);
+    });
+
+    function setActive(id) {
+      // Reset
+      idToLink.forEach(a => { a.classList.remove('is-active'); a.classList.remove('is-visited'); });
+      let foundActive = false;
+      sections.forEach(sec => {
+        const link = idToLink.get(sec.id);
+        if (!link) return;
+        if (sec.id === id) {
+          link.classList.add('is-active');
+          foundActive = true;
+          // Centraliza chip ativo no carrossel sem mexer no scroll da página
+          const parent = link.parentElement;
+          const target = link.offsetLeft - (parent.clientWidth - link.clientWidth) / 2;
+          parent.scrollTo({ left: target, behavior: 'smooth' });
+        } else if (!foundActive) {
+          link.classList.add('is-visited');
+        }
+      });
+    }
+
+    // Observa qual seção está mais próxima do topo (após o header sticky)
+    const spy = new IntersectionObserver((entries) => {
+      // Pega a última que intersecciona (mais à frente no scroll)
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+      if (visible.length) {
+        setActive(visible[0].target.id);
+      }
+    }, {
+      rootMargin: '-30% 0px -55% 0px', // ativa quando a seção entra na faixa central
+      threshold: 0
+    });
+    sections.forEach(s => spy.observe(s));
+
+    // Estado inicial: primeira seção
+    setActive(sections[0].id);
+  })();
 </script>
 
 </body>
