@@ -258,7 +258,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   text-decoration: none;
 }
 .site-header__brand img {
-  height: 56px;
+  height: 88px;
   width: auto;
   display: block;
 }
