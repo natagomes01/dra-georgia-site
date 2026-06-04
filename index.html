@@ -4,212 +4,490 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#650810">
-<meta name="description" content="Dra. Geórgia Peres · Cirurgia plástica · Mamas naturais. CRM-SP 180223 · RQE 64136.">
+<meta name="description" content="Dra. Geórgia Peres · Cirurgia plástica · Mama, Face, Corpo. Mais que procedimentos: clareza, escolha e confiança. CRM-SP 180223 · RQE 64136. São Paulo.">
 <meta property="og:title" content="Dra. Geórgia Peres — Cirurgia plástica">
-<meta property="og:description" content="Mamas naturais. Mais que procedimentos: clareza, escolha e confiança.">
+<meta property="og:description" content="Mais que procedimentos: clareza, escolha e confiança.">
 <meta property="og:type" content="website">
-<title>Dra. Geórgia Peres · Cirurgia plástica</title>
+<meta property="og:image" content="assets/photos/dra-georgia-01.jpg">
+<title>Dra. Geórgia Peres · Cirurgia plástica · São Paulo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
 <style>
-  :root {
-    --bordo: #650810;
-    --vinho: #2C0306;
-    --nude:  #D6C0B2;
-    --offwhite: #F1EBEB;
-    --ivory: #FAF6F4;
-    --gold: #C9A24A;
-    --gold-light: #F2D27A;
-    --grafite: #2F2F2F;
-    --fg-on-bordo-2: rgba(241, 235, 235, 0.78);
-    --font-display: "Cormorant Garamond", Georgia, serif;
-    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body {
-    font-family: var(--font-body);
-    background: var(--bordo);
+  /* Home-only styles */
+  .hero-home {
+    position: relative;
+    overflow: hidden;
+    background: var(--dg-bordo);
     background-image:
-      linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 45%),
+      linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 45%),
       linear-gradient(180deg, #7A0A14 0%, #3A0509 100%);
-    color: var(--offwhite);
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    -webkit-font-smoothing: antialiased;
+    color: var(--fg-on-bordo);
+    padding-block: clamp(72px, 10vw, 144px);
   }
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  }
-  .container {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 24px;
-    width: 100%;
-  }
-  header {
-    padding-block: 24px;
-  }
-  .brand {
-    display: inline-flex;
+  .hero-home__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(40px, 6vw, 96px);
     align-items: center;
-    text-decoration: none;
   }
-  .brand img {
-    height: 72px;
-    width: auto;
-    display: block;
-    filter: brightness(0) invert(1);
-  }
-  main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding-block: clamp(40px, 8vw, 96px);
-  }
-  .hero {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 720px;
-  }
-  .divider-gold {
-    width: 64px;
-    height: 1px;
-    background: var(--gold-light);
-    border: 0;
-    margin: 0 auto 24px;
-  }
-  .overline {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--fg-on-bordo-2);
-    margin-bottom: 16px;
-  }
-  .display {
+  .hero-home__copy { max-width: 620px; }
+  .hero-home__h1 {
     font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 500;
+    font-size: clamp(48px, 7vw, 96px);
     line-height: 1.02;
     letter-spacing: -0.02em;
-    color: var(--offwhite);
-    margin-bottom: 12px;
+    color: var(--fg-on-bordo);
+    margin-block: var(--sp-3) var(--sp-3);
     text-wrap: balance;
   }
-  .display em {
-    font-style: italic;
-    color: var(--gold-light);
-    font-weight: 400;
-  }
-  .sub {
+  .hero-home__h1 em { font-style: italic; color: var(--dg-ouro-claro); font-weight: 500; }
+  .hero-home__sub {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: clamp(22px, 2.6vw, 30px);
+    font-size: clamp(22px, 2.4vw, 28px);
     color: var(--fg-on-bordo-2);
-    margin-bottom: 48px;
+    margin-bottom: var(--sp-5);
     line-height: 1.4;
   }
-  .ctas {
+  .hero-home__ctas { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .hero-home__photo {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.32);
+  }
+  .hero-home__photo img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .hero-home__photo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 60%, rgba(44,3,6,0.25) 100%);
+    pointer-events: none;
+  }
+  @media (max-width: 900px) {
+    .hero-home__grid { grid-template-columns: 1fr; }
+    .hero-home__photo { max-width: 460px; margin-inline: auto; aspect-ratio: 4/5; }
+  }
+
+  /* Section: 4 áreas */
+  .areas__h2 { text-align: center; margin-bottom: var(--sp-3); }
+  .areas__lead {
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 28px);
+    color: var(--fg-2);
+    max-width: 720px;
+    margin: 0 auto var(--sp-8);
+  }
+  .areas__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+  @media (max-width: 720px) { .areas__grid { grid-template-columns: 1fr; } }
+  .area-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--r-lg);
+    padding: clamp(28px, 3.6vw, 48px);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 24px;
+    gap: var(--sp-2);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: transform var(--dur-base) var(--ease),
+                box-shadow var(--dur-base) var(--ease),
+                border-color var(--dur-base) var(--ease);
+    overflow: hidden;
+    min-height: 280px;
   }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: var(--offwhite);
-    color: var(--bordo);
+  .area-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-slow) var(--ease);
+  }
+  .area-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--rule-bordo); }
+  .area-card:hover::before { transform: scaleX(1); }
+  .area-card--featured { background: linear-gradient(180deg, #FAF6F4 0%, #F8EFD9 40%, #FAF6F4 100%); }
+  .area-card--featured::before { background: var(--accent); transform: scaleX(1); height: 3px; }
+  .area-card__diamond {
+    width: 18px; height: 18px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    margin-bottom: var(--sp-1);
+  }
+  .area-card--featured .area-card__diamond { background: var(--accent); }
+  .area-card__overline {
     font-family: var(--font-body);
-    font-size: 17px;
+    font-size: 11px;
     font-weight: 600;
-    text-decoration: none;
-    padding: 22px 36px;
-    min-height: 56px;
-    border-radius: 8px;
-    transition: background 160ms cubic-bezier(0.22,0.61,0.36,1), transform 160ms cubic-bezier(0.22,0.61,0.36,1), box-shadow 240ms cubic-bezier(0.22,0.61,0.36,1);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
-  .btn:hover { background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
-  .btn:active { transform: translateY(1px); }
-  .btn:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
-  .btn .arrow { display: inline-block; transition: transform 160ms cubic-bezier(0.22,0.61,0.36,1); }
-  .btn:hover .arrow { transform: translateX(3px); }
-  .whats {
-    color: var(--gold-light);
-    font-style: italic;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(241, 235, 235, 0.2);
-    padding-bottom: 2px;
-    transition: color 160ms, border-color 160ms;
+  .area-card--featured .area-card__overline { color: var(--accent); }
+  .area-card__title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.4vw, 44px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--fg-1);
+    margin-block: 4px 6px;
+    letter-spacing: -0.01em;
   }
-  .whats:hover { color: #fff; border-bottom-color: var(--gold-light); }
-  footer {
-    padding-block: 40px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--fg-on-bordo-2);
-    letter-spacing: 0.04em;
-    line-height: 1.7;
-  }
-  footer .crm { font-style: italic; }
-  .specialty-note {
-    margin-top: 56px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(241, 235, 235, 0.14);
-    font-size: 13px;
-    color: var(--fg-on-bordo-2);
+  .area-card__list {
+    list-style: none;
+    color: var(--fg-2);
+    font-size: 15px;
     line-height: 1.6;
   }
-  .specialty-note strong { color: var(--gold-light); font-weight: 500; }
+  .area-card__list li {
+    padding-block: 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .area-card__list li::before {
+    content: "◆";
+    color: var(--gold);
+    font-size: 9px;
+    flex-shrink: 0;
+    transform: translateY(-2px);
+  }
+  .area-card__cta {
+    margin-top: auto;
+    padding-top: var(--sp-3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .area-card__cta .arrow { transition: transform var(--dur-fast) var(--ease); }
+  .area-card:hover .area-card__cta .arrow { transform: translateX(3px); }
+
+  /* Authority preview */
+  .authority {
+    background: var(--bg-paper);
+  }
+  .authority__grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: center;
+  }
+  .authority__photo {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: var(--shadow-md);
+  }
+  .authority__photo img { width: 100%; height: 100%; object-fit: cover; }
+  .authority__copy { max-width: 540px; }
+  .authority__h2 {
+    margin-block: var(--sp-3);
+  }
+  .authority__triade {
+    margin-block: var(--sp-3) var(--sp-5);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.4;
+    color: var(--accent);
+  }
+  .authority__triade strong { font-style: normal; font-weight: 600; }
+  .authority__signature {
+    border-top: 1px solid var(--gold);
+    margin-top: var(--sp-3);
+    padding-top: var(--sp-3);
+    display: grid;
+    gap: 4px;
+  }
+  .authority__signature .name {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--fg-1);
+  }
+  .authority__signature .crm {
+    font-size: var(--t-small);
+    color: var(--fg-2);
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 900px) {
+    .authority__grid { grid-template-columns: 1fr; }
+    .authority__photo { max-width: 460px; margin-inline: auto; }
+  }
+
+  /* CTA strip */
+  .cta-strip {
+    text-align: center;
+    padding-block: clamp(64px, 8vw, 120px);
+  }
+  .cta-strip__h2 {
+    margin-bottom: var(--sp-3);
+  }
+  .cta-strip__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 28px);
+    color: var(--fg-on-bordo-2);
+    max-width: 620px;
+    margin: 0 auto var(--sp-5);
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <a class="brand" href="/" aria-label="Dra. Geórgia Peres — início">
-      <img src="assets/logos/logo-georgia-white.svg" alt="Dra. Geórgia Peres">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- ============================================================ HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="/" aria-label="Dra. Geórgia Peres — início">
+      <img src="assets/logos/logo-georgia-white.svg" alt="Dra. Geórgia Peres" style="filter: brightness(0);">
+    </a>
+    <nav class="site-header__nav" aria-label="Navegação principal">
+      <a href="mama/"     class="is-featured">Mama</a>
+      <a href="face/">Face</a>
+      <a href="corpo/">Corpo</a>
+      <a href="estetica/">Estética</a>
+      <a href="sobre/">Sobre</a>
+      <a href="contato/">Contato</a>
+    </nav>
+    <div class="site-header__cta">
+      <a class="btn btn--primary" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20vim%20do%20site." target="_blank" rel="noopener">
+        Agendar avaliação <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+    <button class="site-header__toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div class="site-header__mobile" id="nav-mobile">
+    <nav aria-label="Navegação mobile">
+      <a href="mama/" class="is-featured">Mama</a>
+      <a href="face/">Face</a>
+      <a href="corpo/">Corpo</a>
+      <a href="estetica/">Estética</a>
+      <a href="sobre/">Sobre</a>
+      <a href="contato/">Contato</a>
+    </nav>
+    <a class="btn btn--primary" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20vim%20do%20site." target="_blank" rel="noopener">
+      Agendar avaliação <span class="btn-arrow" aria-hidden="true">→</span>
     </a>
   </div>
 </header>
 
-<main>
-  <div class="container">
-    <div class="hero">
-      <hr class="divider-gold" aria-hidden="true">
-      <p class="overline">Cirurgia plástica · São Paulo</p>
-      <h1 class="display">Mamas <em>naturais.</em></h1>
-      <p class="sub">Mais que procedimentos: clareza, escolha e confiança.</p>
+<main id="main">
 
-      <div class="ctas">
-        <a class="btn" href="mamas/">
-          Conheça meu trabalho com mama <span class="arrow" aria-hidden="true">→</span>
+<!-- ============================================================ HERO -->
+<section class="hero-home" aria-labelledby="hero-h1">
+  <div class="container hero-home__grid">
+    <div class="hero-home__copy reveal">
+      <hr class="divider-gold" style="margin: 0 0 16px 0;" aria-hidden="true">
+      <p class="dg-overline" style="color: var(--fg-on-bordo-2);">Cirurgia plástica · São Paulo</p>
+      <h1 id="hero-h1" class="hero-home__h1">Mais que procedimentos: <em>clareza, escolha e confiança.</em></h1>
+      <p class="hero-home__sub">Mama, face, corpo. Uma decisão informada começa por um diálogo verdadeiro.</p>
+      <div class="hero-home__ctas">
+        <a class="btn btn--primary-on-bordo btn--xl" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20vim%20do%20site." target="_blank" rel="noopener">
+          Agendar avaliação <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
-        <a class="whats" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20vim%20do%20site." target="_blank" rel="noopener">
-          Falar no WhatsApp · (11) 98803-2382
-        </a>
+        <a class="btn btn--ghost-on-bordo" href="#areas">Conhecer especialidades</a>
       </div>
+    </div>
+    <figure class="hero-home__photo reveal" aria-hidden="true">
+      <img src="assets/photos/dra-georgia-01.jpg" alt="" loading="eager">
+    </figure>
+  </div>
+</section>
 
-      <p class="specialty-note">
-        <strong>Site em construção.</strong> A página completa com todas as especialidades está sendo finalizada.
-      </p>
+<!-- ============================================================ 4 ÁREAS -->
+<section class="section section--paper" id="areas" aria-labelledby="areas-h2">
+  <div class="container">
+    <hr class="divider-gold" aria-hidden="true">
+    <p class="dg-overline" style="text-align:center;margin-bottom:16px;">Especialidades</p>
+    <h2 id="areas-h2" class="dg-h2 areas__h2 reveal">Quatro áreas. <em class="dg-italic">Um cuidado.</em></h2>
+    <p class="areas__lead reveal">Onde você quer chegar é o ponto de partida.</p>
+
+    <div class="areas__grid">
+      <!-- MAMA — featured (mecanismo principal) -->
+      <a class="area-card area-card--featured reveal" href="mama/">
+        <span class="area-card__diamond" aria-hidden="true"></span>
+        <span class="area-card__overline">Mecanismo Mapa IPC</span>
+        <h3 class="area-card__title">Mama</h3>
+        <ul class="area-card__list">
+          <li>Mastopexia sem prótese</li>
+          <li>Mastopexia com prótese de silicone</li>
+          <li>Mamoplastia redutora</li>
+          <li>Lipoenxertia mamária</li>
+        </ul>
+        <span class="area-card__cta">Ver procedimentos de mama <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
+
+      <!-- FACE -->
+      <a class="area-card reveal" href="face/">
+        <span class="area-card__diamond" aria-hidden="true"></span>
+        <span class="area-card__overline">Cirurgia & harmonização</span>
+        <h3 class="area-card__title">Face</h3>
+        <ul class="area-card__list">
+          <li>Blefaroplastia</li>
+          <li>Facelifting · Minilifting</li>
+          <li>Lipoenxertia facial</li>
+          <li>Rinoplastia · Rinomodelação</li>
+          <li>Suspensão de supercílios</li>
+        </ul>
+        <span class="area-card__cta">Ver procedimentos de face <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
+
+      <!-- CORPO -->
+      <a class="area-card reveal" href="corpo/">
+        <span class="area-card__diamond" aria-hidden="true"></span>
+        <span class="area-card__overline">Contorno & escultura</span>
+        <h3 class="area-card__title">Corpo</h3>
+        <ul class="area-card__list">
+          <li>Abdominoplastia</li>
+          <li>Lipoescultura</li>
+          <li>Hidrolipo</li>
+          <li>Lipoaspiração de submento</li>
+        </ul>
+        <span class="area-card__cta">Ver procedimentos de corpo <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
+
+      <!-- ESTÉTICA -->
+      <a class="area-card reveal" href="estetica/">
+        <span class="area-card__diamond" aria-hidden="true"></span>
+        <span class="area-card__overline">Procedimentos não-cirúrgicos</span>
+        <h3 class="area-card__title">Estética</h3>
+        <ul class="area-card__list">
+          <li>Botox · Sculptra</li>
+          <li>Preenchimento facial</li>
+          <li>Aplicação de plasma</li>
+          <li>Rejuvenescimento facial</li>
+        </ul>
+        <span class="area-card__cta">Ver procedimentos estéticos <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
     </div>
   </div>
+</section>
+
+<!-- ============================================================ AUTORIDADE -->
+<section class="section authority" aria-labelledby="authority-h2">
+  <div class="container authority__grid">
+    <figure class="authority__photo reveal" aria-hidden="true">
+      <img src="assets/photos/dra-georgia-02.jpg" alt="" loading="lazy">
+    </figure>
+    <div class="authority__copy reveal">
+      <hr class="divider-gold" style="margin: 0 0 16px 0;" aria-hidden="true">
+      <p class="dg-overline">A especialista</p>
+      <h2 id="authority-h2" class="dg-h2 authority__h2">Dra. Geórgia Peres</h2>
+      <p class="dg-body-lg">Cirurgiã plástica com formação em referência nacional, autora do <strong>Mapa IPC</strong> — o método autoral que mede o preenchimento do colo e desenha resultados naturais e duradouros.</p>
+      <p class="authority__triade"><strong>Eu escuto.</strong> <strong>Eu explico.</strong> <strong>Eu provo.</strong></p>
+      <a class="btn btn--ghost" href="sobre/">Conhecer a trajetória <span class="btn-arrow" aria-hidden="true">→</span></a>
+      <div class="authority__signature">
+        <span class="name">Dra. Geórgia Peres</span>
+        <span class="crm">CRM-SP 180223 · RQE 64136 · Cirurgia plástica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA STRIP -->
+<section class="section section--bordo on-bordo cta-strip" aria-labelledby="cta-h2">
+  <div class="container">
+    <hr class="divider-gold" aria-hidden="true">
+    <h2 id="cta-h2" class="dg-h2 cta-strip__h2">A sua consulta começa <em class="dg-italic">com uma escuta.</em></h2>
+    <p class="cta-strip__sub">Você sai sabendo o que é possível, o que entrega o resultado que você quer, e o que faz sentido pro seu corpo.</p>
+    <a class="btn btn--primary-on-bordo btn--xl" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+      Agendar avaliação <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
 </main>
 
-<footer>
-  <div class="container">
-    <p class="crm">Dra. Geórgia Peres · CRM-SP 180223 · RQE 64136</p>
-    <p>Rua Escobar Ortiz, 335 — São Paulo · SP</p>
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <span class="name">Dra. Geórgia Peres</span>
+      <p class="crm">CRM-SP 180223 · RQE 64136</p>
+      <p>Cirurgia plástica — São Paulo</p>
+    </div>
+    <div>
+      <h4>Endereço</h4>
+      <p>Rua Escobar Ortiz, 335<br>São Paulo · SP</p>
+      <p style="margin-top:12px;">
+        <a href="https://wa.me/5511988032382" target="_blank" rel="noopener">WhatsApp · (11) 98803-2382</a>
+      </p>
+    </div>
+    <div>
+      <h4>Especialidades</h4>
+      <p>
+        <a href="mama/">Mama</a> · <a href="face/">Face</a><br>
+        <a href="corpo/">Corpo</a> · <a href="estetica/">Estética</a>
+      </p>
+      <p style="margin-top:12px;"><a href="sobre/">Sobre a Dra.</a> · <a href="contato/">Contato</a></p>
+    </div>
+  </div>
+  <div class="container site-footer__legal">
+    <em>Resultados estéticos variam. Não há garantia de resultado clínico. Toda imagem de paciente publicada nesta página foi autorizada por escrito.</em>
   </div>
 </footer>
+
+<!-- ============================================================ WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/5511988032382?text=Oi%20Dra.%20Ge%C3%B3rgia%2C%20vim%20do%20site." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp com a Dra. Geórgia">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.36.69 4.66 1.99 6.65L4 29l7.49-1.96a12.04 12.04 0 0 0 4.55.9h.01c6.64 0 12.04-5.4 12.04-12.04S22.69 3 16.04 3zm0 22.06c-1.41 0-2.79-.37-4-1.07l-.29-.17-4.45 1.16 1.19-4.33-.19-.31a9.94 9.94 0 0 1-1.55-5.32c0-5.49 4.47-9.96 9.97-9.96 2.66 0 5.16 1.04 7.04 2.92a9.9 9.9 0 0 1 2.92 7.04c0 5.5-4.47 9.97-9.97 9.97zm5.46-7.45c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51l-.58-.01c-.2 0-.53.07-.8.38-.28.3-1.05 1.02-1.05 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.13 4.51.72.31 1.28.5 1.71.64.72.23 1.37.2 1.89.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.13-.27-.2-.57-.35z"/>
+  </svg>
+</a>
+
+<script>
+  // Mobile nav toggle
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('nav-toggle');
+  if (toggle && header) {
+    toggle.addEventListener('click', () => {
+      const open = header.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    });
+  }
+
+  // Reveal on scroll
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  } else if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
 
 </body>
 </html>

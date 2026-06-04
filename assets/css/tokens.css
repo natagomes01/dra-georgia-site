@@ -1,0 +1,77 @@
+/* =====================================================================
+   Design tokens — Dra. Geórgia Peres
+   Fonte da verdade pra TODAS as páginas. Importar primeiro.
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* ----- Brand palette ------------------------------------------------- */
+  --dg-grafite:    #2F2F2F;
+  --dg-bordo:      #650810;
+  --dg-vinho:      #2C0306;
+  --dg-nude:       #D6C0B2;
+  --dg-offwhite:   #F1EBEB;
+  --dg-ivory:      #FAF6F4;
+  --dg-ouro:       #C9A24A;
+  --dg-ouro-claro: #F2D27A;
+
+  /* ----- Semantic colors ----------------------------------------------- */
+  --fg-1: var(--dg-grafite);
+  --fg-2: rgba(47, 47, 47, 0.72);
+  --fg-3: rgba(47, 47, 47, 0.48);
+  --fg-on-bordo:   var(--dg-offwhite);
+  --fg-on-bordo-2: rgba(241, 235, 235, 0.78);
+  --accent:        var(--dg-bordo);
+  --accent-soft:   var(--dg-nude);
+  --gold:          var(--dg-ouro);
+  --bg-paper:      var(--dg-offwhite);
+  --bg-card:       var(--dg-ivory);
+  --rule-soft:     rgba(47, 47, 47, 0.12);
+  --rule-bordo:    rgba(101, 8, 16, 0.24);
+  --rule-on-bordo: rgba(241, 235, 235, 0.18);
+  --light-window:  linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 45%);
+
+  /* ----- Type families ------------------------------------------------- */
+  --font-display: "Cormorant Garamond", "Ivy Mode", Georgia, serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* ----- Type scale ---------------------------------------------------- */
+  --t-display:  clamp(56px, 8vw, 120px);
+  --t-h1:       clamp(44px, 6.4vw, 88px);
+  --t-h2:       clamp(32px, 4.4vw, 60px);
+  --t-h3:       clamp(22px, 2.4vw, 32px);
+  --t-overline: 11px;
+  --t-body:     17px;
+  --t-body-lg:  19px;
+  --t-small:    13px;
+  --t-meta:     12px;
+
+  /* ----- Spacing — Fibonacci 8 ----------------------------------------- */
+  --sp-1: 8px;    --sp-2: 16px;   --sp-3: 24px;
+  --sp-5: 40px;   --sp-8: 64px;   --sp-13:104px;
+  --sp-21:168px;
+
+  /* ----- Radii --------------------------------------------------------- */
+  --r-sm: 4px;  --r-md: 8px;  --r-lg: 14px;  --r-xl: 24px;  --r-pill: 999px;
+
+  /* ----- Shadows — quentes -------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(47, 12, 12, 0.06);
+  --shadow-md: 0 8px 24px rgba(47, 12, 12, 0.08);
+  --shadow-lg: 0 24px 60px rgba(47, 12, 12, 0.14);
+
+  /* ----- Motion -------------------------------------------------------- */
+  --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast:  160ms;
+  --dur-base:  240ms;
+  --dur-slow:  480ms;
+
+  /* ----- Layout -------------------------------------------------------- */
+  --container: 1200px;
+  --gutter:    24px;
+
+  /* ----- Z-index scale ------------------------------------------------- */
+  --z-header: 50;
+  --z-float:  60;
+  --z-modal:  100;
+}
