@@ -5,3 +5,7 @@ node_modules/
 .idea/
 .env
 .env.*
+
+# Site atual da Dra (extraído via wget) — referência local pra reformulação.
+# Não vai pro repo público: contém WordPress + tema OceanWP + Elementor (~28MB de código de terceiros).
+_docs/site-original/
