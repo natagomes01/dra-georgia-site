@@ -105,14 +105,25 @@
   padding-block: 14px;
 }
 .site-header__brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 16px;
   text-decoration: none;
 }
-.site-header__brand img {
-  height: 88px;
+.site-header__brand-symbol {
+  height: 56px;
   width: auto;
   display: block;
+}
+.site-header__brand-wordmark {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 720px) {
+  .site-header__brand { gap: 12px; }
+  .site-header__brand-symbol { height: 44px; }
+  .site-header__brand-wordmark { height: 22px; }
 }
 .site-header__nav {
   display: flex;
