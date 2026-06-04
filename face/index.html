@@ -60,7 +60,7 @@
     top: 117px; /* logo 88px + padding 2*14px = 116, +1 fudge */
     z-index: 20;
     border-bottom: 1px solid var(--rule-soft);
-    padding-block: 20px;
+    padding-block: 10px;
   }
   .proc-nav__inner {
     display: flex;
@@ -70,7 +70,8 @@
     overflow-x: auto;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 2px;
+    /* padding interno para a sombra do chip ativo não ser cortada pelo overflow */
+    padding-block: 12px;
   }
   .proc-nav__inner::-webkit-scrollbar { display: none; }
   @media (max-width: 720px) {
