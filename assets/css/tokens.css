@@ -76,13 +76,13 @@
   --z-modal:  100;
 
   /* ----- Header height (usado pra sticky proc-nav etc) ----------------- */
-  /* desktop: símbolo 52px + padding 2*14 = 80 */
-  --header-height: 80px;
+  /* desktop: símbolo 40px (maior) + padding 2*14 = 68 */
+  --header-height: 68px;
 }
 
 @media (max-width: 720px) {
   :root {
-    /* mobile: símbolo 40px + padding 2*14 = 68 */
-    --header-height: 68px;
+    /* mobile: símbolo 32px + padding 2*14 = 60 */
+    --header-height: 60px;
   }
 }

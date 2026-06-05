@@ -111,19 +111,19 @@
   text-decoration: none;
 }
 .site-header__brand-symbol {
-  height: 52px;
+  height: 40px;
   width: auto;
   display: block;
 }
 .site-header__brand-wordmark {
-  height: 24px;
+  height: 32px;
   width: auto;
   display: block;
 }
 @media (max-width: 720px) {
   .site-header__brand { gap: 12px; }
-  .site-header__brand-symbol { height: 40px; }
-  .site-header__brand-wordmark { height: 20px; }
+  .site-header__brand-symbol { height: 32px; }
+  .site-header__brand-wordmark { height: 26px; }
 }
 .site-header__nav {
   display: flex;
