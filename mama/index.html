@@ -52,7 +52,7 @@
   .hub-hero__ipc-link:hover { color: #fff; border-color: var(--dg-ouro-claro); }
 
   .proc-nav {
-    background: var(--bg-card); position: sticky; top: 117px;
+    background: var(--bg-card); position: sticky; top: var(--header-height);
     z-index: 20; border-bottom: 1px solid var(--rule-soft); padding-block: 10px;
   }
   .proc-nav__inner {
@@ -79,7 +79,7 @@
     box-shadow: 0 4px 14px rgba(101, 8, 16, 0.20);
   }
 
-  .proc { padding-block: clamp(64px, 8vw, 112px); scroll-margin-top: 180px; }
+  .proc { padding-block: clamp(64px, 8vw, 112px); scroll-margin-top: calc(var(--header-height) + 80px); }
   .proc--paper { background: var(--bg-paper); }
   .proc--ivory { background: var(--bg-card); }
   .proc__inner { max-width: 960px; margin: 0 auto; }

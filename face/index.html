@@ -57,7 +57,7 @@
   .proc-nav {
     background: var(--bg-card);
     position: sticky;
-    top: 117px; /* logo 88px + padding 2*14px = 116, +1 fudge */
+    top: var(--header-height);
     z-index: 20;
     border-bottom: 1px solid var(--rule-soft);
     padding-block: 10px;
@@ -120,7 +120,7 @@
   /* Procedure section */
   .proc {
     padding-block: clamp(64px, 8vw, 112px);
-    scroll-margin-top: 180px; /* header 117 + proc-nav ~52 + 11 gap */
+    scroll-margin-top: calc(var(--header-height) + 80px);
   }
   .proc--paper { background: var(--bg-paper); }
   .proc--ivory { background: var(--bg-card); }
